@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p v-once>  {{ titulo}} </p>
+    <p>{{ getTitle() }}</p>
+    <a v-bind:href="link" target="_blank">Google</a>
+    <p v-html="linkHtml"></p>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'firts title',
+            link: 'http://google.com',
+            linkHtml: '<a href="http://google.com">Google</a>'
+        },
+        methods: {
+            getTitle: function() {
+                this.titulo = 'update title'
+                return this.titulo
+            }
+        }
+    })
+</script>
