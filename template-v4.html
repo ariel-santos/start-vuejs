@@ -5,6 +5,7 @@
         {{ titulo}}
     </p>
     <p>{{ getTitle() }}</p>
+    <a v-bind:href="link" target="_blank">Google</a>
 
 </div>
 
@@ -12,7 +13,8 @@
     new Vue({
         el: '#app',
         data: {
-            titulo: 'Oi!'
+            titulo: 'Oi!',
+            link: 'http://google.com'
         },
         methods: {
             getTitle: function() {
