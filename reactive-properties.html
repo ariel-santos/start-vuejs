@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <button v-on:click="updateCount1"> UpdateCount1 </button>
+  <button v-on:click="cont2++"> UpdateCount2 </button>
+  <p> Cont1: {{ cont1}} </p>
+  <p> Cont2: {{ cont2}} </p>
+  <p> Result: {{ result }} </p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      cont1: 0,
+      cont2: 0
+    }, 
+    computed: {
+      result() {
+        // using computed methods for not call unnecessary functions 
+        console.log('call result function');
+        return this.cont1 >= 5 ? 'Greater than 5' : 'Less then 5' 
+      }
+    },
+    methods: {
+      updateCount1: function() {
+        this.cont1++;
+      }
+    }
+  })
+</script>
