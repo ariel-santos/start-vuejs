@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p> {{number}} </p>
+  <button v-on:click="sumNumber">Somar</button>
+  <p v-on:mousemove="updateXY"> Mouse: {{ x }} e {{ y }} </p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      number: 0,
+      x: 0,
+      y: 0
+    },
+    methods: {
+      sumNumber: function () {
+        this.number++;
+      },
+      updateXY: function(event) {
+        this.x = event.clientX;
+        this.y = event.clientY;
+      }
+    }
+  })
+</script>
