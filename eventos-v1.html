@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>
+    {{number}}
+  </p>
+  <button v-on:click="sumNumber">Somar</button>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      number: 0
+    },
+    methods: {
+      sumNumber: function () {
+        this.number++;
+      }
+    }
+  })
+</script>
