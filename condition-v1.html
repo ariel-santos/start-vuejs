@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p v-if="login"> User  {{userName}} is logged </p>
+    <p v-else-if="private"> User private is logged </p>
+    <p v-else> Not found user </p>
+    <button @click="login = !login">
+      {{ login ? 'Sair' : 'Entrar' }}
+    </button>
+
+    <footer v-show="login">
+      <p>@Copright</p>
+    </footer>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        userName: 'Ariel',
+        login: false,
+        private: true
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="color in colors"> {{color}} </li>
+    </ul>
+    <hr>
+    <p> using index</p>
+    <ul>
+      <li v-for="(color, index) in colors">{{index + 1}} - {{color}} </li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="user in users">
+        <p v-for="(value, key, index) in user" :key="user.id">
+          <b>{{index + 1}}</b> - {{key}}: {{value}}
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        colors:['red', 'green', 'blue'],
+        users: [
+          { id: '1',name:'Name 1', email: 'Email 1', phone: 'Phone 1 '},
+          { id: '2',name:'Name 2', email: 'Email 2', phone: 'Phone 2 '}
+        ]
+      }
+    });
+  </script>
+</body>
+
+</html>
